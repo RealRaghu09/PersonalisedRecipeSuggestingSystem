@@ -6,7 +6,7 @@ from models.Models import MyModel
 #create a obj takes photo name returns dict 
 from models.imageModel import ImageModel
 app  = Flask(__name__)
-CORS(app ,origins=["http://localhost:5173"])
+CORS(app , resources={r"/*": {"origins": "*"}})
 @app.route('/test')
 def test():
     return jsonify({"message" : "Hello from Backend"})

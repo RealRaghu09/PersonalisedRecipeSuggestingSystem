@@ -5,6 +5,7 @@ import Home from './components/Home'
 import About from './components/About'
 import Features from './components/Features'
 import CarbonFootprint from './components/CarbonFootprint'
+import Uploads from './components/Uploads'
 
 function Navbar() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/features" element={<Features />} />
           <Route path="/carbon-footprint" element={<CarbonFootprint />} />
+          <Route path="/uploads" element={<Uploads />} />
         </Routes>
       </main>
     </div>
