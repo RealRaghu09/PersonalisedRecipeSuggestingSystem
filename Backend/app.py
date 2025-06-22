@@ -6,8 +6,10 @@ from models.Models import MyModel
 #create a obj takes photo name returns dict 
 from models.imageModel import ImageModel
 app  = Flask(__name__)
-CORS(app)
-
+CORS(app ,origins=["http://localhost:5173"])
+@app.route('/test')
+def test():
+    return jsonify({"message" : "Hello from Backend"})
 
 PHOTOS_FOLDER = './photos'
 os.makedirs(PHOTOS_FOLDER, exist_ok=True) 
