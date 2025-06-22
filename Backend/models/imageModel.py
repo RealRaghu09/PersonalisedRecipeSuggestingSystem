@@ -19,6 +19,7 @@ but array can have only one None or food_items is single
 '''
 
 class ImageModel:
+    model:None
     def __init__(self):
         load_dotenv()
         genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
@@ -27,7 +28,7 @@ class ImageModel:
     def generateImageInText(self, image_path: str) -> dict:
         try:
             # Read image
-            with open(f"../photos/{image_path}", "rb") as f:
+            with open(f"./photos/{image_path}", "rb") as f:
                 image_bytes = f.read()
 
             # Prompt Gemini
@@ -54,7 +55,7 @@ class ImageModel:
 
         except Exception as e:
             print(f"Error: {e}")
-            return {"food_items": ["None"]}
+            return {"food_items": ["None from model"]}
 
     def Clean_text_to_dict(self, text: str) -> dict:
         '''

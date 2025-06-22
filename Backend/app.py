@@ -1,11 +1,46 @@
 #Flask or FAST API
-from flask import Flask ,jsonify
+from flask import Flask ,jsonify , request , render_template
+import os
 from flask_cors import CORS
+#create a obj takes photo name returns dict 
+from models.imageModel import ImageModel
 app  = Flask(__name__)
 CORS(app)
-@app.route('/')
-def Home_page():
-    return('<div>Hello</div>')
+
+
+PHOTOS_FOLDER = './photos'
+os.makedirs(PHOTOS_FOLDER, exist_ok=True) 
+@app.route('/generate/list/food', methods=['POST'])
+def upload_image():
+    print("Request received:", request.method)
+    
+    if 'image' not in request.files:
+        print("No image found in request.files")
+        return jsonify({"error": "No image file part in the request"})
+
+    image = request.files['image']
+
+    if image.filename == '':
+        print("No image selected")
+        return jsonify({"error": "No selected file"})
+
+    save_path = os.path.join(PHOTOS_FOLDER, image.filename)
+
+    try:
+        image.save(save_path)
+        print("Saved image to:", save_path)
+        Photo = ImageModel()
+        foods_dict = Photo.generateImageInText(image.filename)
+    except Exception as e:
+        print("Error during image processing:", e)
+        return jsonify({"error": str(e)})
+
+    if os.path.exists(save_path):
+        os.remove(save_path)
+
+    return jsonify(foods_dict)
+
+
 # def Generate_Food():
 @app.route('/generate/food')
 def generate_food():
@@ -17,12 +52,7 @@ def generate_food():
     }
     '''
     return jsonify({"message":"Hi"})
-@app.route('/get/ImageItem' , methods = ['POST'])
-def get_Image_Content():
-    '''
-    identifies the image and gives the text back in jsom (need to predict the output )
-    '''
-    return "hi"
+
 
 if __name__ == '__main__':
     app.run(debug=True)
