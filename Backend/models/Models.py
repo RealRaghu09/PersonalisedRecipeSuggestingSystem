@@ -17,13 +17,16 @@ class MyModel:
             you have to generate 5 recipes with
             Generate a Python dictionary with this format:
             {{
+            "calories" : [calory of recipe1 ,calory of recipe2,calory of recipe3,calory of recipe4,calory of recipe5],
+            "level" : ["easy" ,"medium" ,"hard",level of recipe4,level of recipe5 ],
+            "time" : [time of recipe1,time of recipe2,time of recipe3,time of recipe4,time of recipe5],
             "food": {{
                 "dish name": {{
                 "recipe name": ["step 1", "step 2", ...]
                 }}
             }}
             }}
-
+            level = "easy" , "medium" , "hard" according to the recipe
             Input:
             {structured_prompt}
 
@@ -53,6 +56,7 @@ class MyModel:
 output: - 
 
 {
+  "calories" : [123,14,53453,23224,3232],
   "food": {
     "Apple Honey Halwa": {
       "Indian Apple Honey Halwa": [
