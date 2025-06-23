@@ -2,3 +2,4 @@
 /Backend/.env
 *.DS_Store
 /Backend/photos
+/Backend/__pycache__
