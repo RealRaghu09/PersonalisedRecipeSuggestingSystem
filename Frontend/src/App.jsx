@@ -30,7 +30,7 @@ const COMMON_ALLERGIES = [
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="navbar-logo">Recipe Suggester</div>
+      <div className="navbar-logo">SnapMyMeal</div>
       <ul className="navbar-links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>
