@@ -112,7 +112,15 @@ output: -
 }
 
 '''
-
+from models.carbonfootprint import MyModelCarbon
+@app.route('/carbon' , methods = ['POST'])
+def carbon():
+    data = request.get_json()
+    data_str  = str(data)
+    food_items = MyModelCarbon()
+    res = food_items.generate(data_str)
+    return jsonify(res)
+    
 
 if __name__ == '__main__':
     app.run(debug=True)
