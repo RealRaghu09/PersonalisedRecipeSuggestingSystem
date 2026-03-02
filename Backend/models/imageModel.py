@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 import google.generativeai as genai
 import ast
+from Backend.models.model_name import MODEL_NAME
 '''
 This is Image Model that requires a image path that is photo name then 
 
@@ -23,7 +24,7 @@ class ImageModel:
     def __init__(self):
         load_dotenv()
         genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-        self.model = genai.GenerativeModel("gemini-1.5-flash")
+        self.model = genai.GenerativeModel(MODEL_NAME)
 
     def generateImageInText(self, image_path: str) -> dict:
         try:

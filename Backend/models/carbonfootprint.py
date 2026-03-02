@@ -3,12 +3,14 @@ import ast
 from dotenv import load_dotenv
 import google.generativeai as genai
 import os
+from Backend.models.model_name import MODEL_NAME
+
 
 class MyModelCarbon:
     def __init__(self):
         load_dotenv()
         genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-        self.model = genai.GenerativeModel("gemini-1.5-flash")
+        self.model = genai.GenerativeModel(MODEL_NAME)
 
     def generate(self, structured_prompt: str) -> dict:
         try:
