@@ -1,137 +1,187 @@
-Demo Link
-[Demo Link](https://youtu.be/6yi-9wbOftc)
+# AI-Based Personalized Recipe Suggestion System
 
-An AI-based Personalized Recipe Suggestion System that takes an image of food items, identifies edible ingredients, excludes non-edible objects, and generates custom recipes based on user preferences, allergies, and cuisine selection.
+## Project Overview
 
-This project integrates Computer Vision + NLP + Recommendation Logic to deliver intelligent, health-aware recipe generation.
+The AI-Based Personalized Recipe Suggestion System is an intelligent cooking assistant that combines Computer Vision, NLP, and Recommendation Systems to generate personalized and health-aware recipes from uploaded food images.
 
- Key Features
-Image-Based Food Detection - Gemini
+The system allows users to upload an image containing food items, automatically detects edible ingredients, removes non-edible objects, and generates customized recipes based on:
 
-Upload an image containing fruits or edible items
+* User preferences
+* Allergies
+* Selected cuisine
 
-Automatically:
+The project focuses on building a smart and adaptive recipe generation pipeline for real-world cooking assistance.
 
- Excludes non-edible objects
+---
 
- Identifies edible food items
+# Features
 
-Uses Computer Vision for food classification
+## 1. Image-Based Food Detection
 
- Dynamic Ingredient Management
+Users can upload an image containing fruits, vegetables, or other food items.
 
-Users can add new food items dynamically
+The system:
 
-Newly added ingredients are stored and reused in future generations
+* Detects edible ingredients
+* Filters non-edible objects
+* Extracts usable food items from the image
 
- Allergy-Aware Recipe Generation
+### Technologies Used
 
-Users can select food allergies (e.g., nuts, dairy, gluten)
+* Gemini Vision Model
+* Image Classification
+* Object Detection
 
-The system strictly avoids allergic ingredients during recipe generation
+---
 
-Cuisine Selection with Descriptions
+# 2. Dynamic Ingredient Management
 
-Users can choose preferred cuisines such as:
+Users can manually add ingredients if something is missing from detection.
 
-Indian
+### Features
 
-Italian
+* New ingredients are stored dynamically
+* Reused in future generations
+* Improves personalization over time
 
-Chinese
+---
 
-Mexican
+# 3. Allergy-Aware Recipe Generation
 
-Mediterranean
+The system supports allergy-safe recipe generation.
 
-Each cuisine includes a short description to help users decide.
+Users can select allergies such as:
 
- Smart Recipe Generation
+* Nuts
+* Dairy
+* Gluten
+* Seafood
 
-Generates 5 personalized recipes per request
+The recommendation engine strictly avoids allergic ingredients during recipe creation.
 
-Recipes are based on:
+### Goal
 
-Detected ingredients
+Generate recipes that are:
 
-Selected cuisine
+* Personalized
+* Safe
+* Health-aware
 
-Allergy constraints
+---
+
+# 4. Cuisine Selection
+
+Users can choose their preferred cuisine before generating recipes.
+
+## Supported Cuisines
+
+| Cuisine       | Description                                   |
+| ------------- | --------------------------------------------- |
+| Indian        | Rich spices and traditional flavors           |
+| Italian       | Pasta, cheese, herbs, and Mediterranean style |
+| Chinese       | Stir-fried dishes and balanced flavors        |
+| Mexican       | Spicy and vibrant food combinations           |
+| Mediterranean | Healthy olive-oil-based cuisine               |
+
+---
+
+# 5. Smart Recipe Generation
+
+The AI engine generates 5 personalized recipes based on:
+
+* Detected ingredients
+* Cuisine preference
+* Allergy constraints
 
 Each recipe includes:
 
- Detailed step-by-step instructions
+* Step-by-step cooking instructions
+* Estimated cooking time
+* Difficulty level
+* Protein content per 100g
+* YouTube tutorial link
+* Nutrients 
 
- Estimated cooking time
+---
 
- Difficulty level (Easy / Medium / Hard)
+# System Architecture
 
- Protein content per 100g
-
-YouTube tutorial link
-
- System Architecture (High-Level)
-
-Image Input
-
-Food Classification (CV Model)
-
+```text
+Image Upload
+      ↓
+Food Detection (Computer Vision Model)
+      ↓
 Edible vs Non-Edible Filtering
-
+      ↓
 Ingredient Normalization
-
+      ↓
 Allergy Filtering
-
+      ↓
 Cuisine-Based Recommendation
-
+      ↓
 Recipe Generation Engine
-
+      ↓
 Nutritional Analysis
+      ↓
+YouTube Tutorial Mapping
+```
 
-YouTube Link Mapping
+---
 
- Tech Stack
-AI / ML
+# Tech Stack
 
-Python
+## AI / ML
 
-NLP & Recommendation
+* Python
+* Gemini Vision
+* Gemini
+* NLP-based Recommendation Logic
 
-Ingredient similarity matching
+## Backend
 
+* Flask
 
-Backend
+## Frontend
 
-Backend - Flask 
-
-Frontend - Vite 
-
-
-YouTube Search 
-
-Nutrition datasets / APIs
-
+* Vite
 
 
+---
 
- Future Enhancements
+# AI Concepts Used
 
-User profile & taste history
+## Computer Vision
 
-Calorie-based meal planning
+Used for:
 
-Voice-based input
+* Ingredient detection
+* Food classification
+* Edible object filtering
 
-Mobile app integration
+---
 
-LLM-based recipe refinement
+Used for:
 
- Use Cases
+* Ingredient similarity matching
+* Personalized recipe generation
+* Cuisine-based recommendations
 
-Health-conscious users
+---
+## Enhacements 
 
-Allergy-sensitive individuals
+* User profile and taste history
+* Calorie-based meal planning
+* Voice-based ingredient input
+* Mobile app integration
+* LLM-based recipe refinement
+* Smart kitchen assistant integration
 
-Beginners learning cooking
+---
 
-AI-powered smart kitchen systems
+# Use Cases
+
+* Health-conscious users
+* Allergy-sensitive individuals
+* Beginners learning cooking
+* AI-powered kitchen assistants
+* Personalized nutrition systems
