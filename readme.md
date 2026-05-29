@@ -1,5 +1,4 @@
-Demo Link
-[Demo Link](https://youtu.be/6yi-9wbOftc)
+
 # AI-Based Personalized Recipe Suggestion System
 
 ## Project Overview
